@@ -1,0 +1,14 @@
+{
+	"dependencies": {
+		"comicbooks-api": "^0.1.5",
+		"fastify": "^4.10.2",
+		"got": "^12.5.3"
+	},
+  
+  	"type": "module",
+
+  	"scripts": {
+  		"start:backend": "node index.js && cd frontend && pnpm dev",
+  		"start:frontend": "cd frontend && pnpm dev"
+  	}
+}
