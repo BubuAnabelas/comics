@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+import cors from '@fastify/cors'
 import routes from './routes/index.js'
 const fastify = Fastify({ logger: true })
 
@@ -12,6 +13,10 @@ fastify.register(routes)
 // Run the server!
 const start = async () => {
   try {
+    await fastify.register(cors, {
+      origin: true
+    })
+
     await fastify.listen({ port: 4000 })
   } catch (err) {
     fastify.log.error(err)
